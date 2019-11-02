@@ -2,6 +2,9 @@
 ![](https://github.com/thomasio101/js-immutable-utils/workflows/Node%20CI/badge.svg)
 
 This package provides simple utility functions for modifying immutables in Javascript.
+# Installation
+To install this library, run the following command;  
+`npm i --save js-immutable-utils`
 # Examples
 ## Arrays
 ### Appending elements onto an array
