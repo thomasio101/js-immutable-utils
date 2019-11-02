@@ -48,7 +48,7 @@ let newPeople = unshift(people, 'Sarah', 'Tom')
 console.log(people) // ['Alice', 'Bob', 'Charlie']
 console.log(newPeople) // ['Sarah', 'Tom', 'Alice', 'Bob', 'Charlie']
 ```
-### Remove the second element from an array
+### Removing the second element from an array
 ```typescript
 import { splice } from 'js-immutable-utils/array'
 
@@ -60,7 +60,7 @@ console.log(people) // ['Alice', 'Bob', 'Charlie']
 console.log(removedPeople) // ['Bob']
 console.log(newPeople) // ['Alice', 'Charlie']
 ```
-### Insert elements into an array
+### Inserting elements into an array
 ```typescript
 import { splice } from 'js-immutable-utils/array'
 
@@ -71,7 +71,7 @@ let { array: newPeople } = splice(people, 0, 0, 'Sarah', 'Tom')
 console.log(people) // ['Alice', 'Bob', 'Charlie']
 console.log(newPeople) // ['Alice', 'Sarah', 'Tom', 'Bob', 'Charlie']
 ```
-### Sort an array
+### Sorting an array
 ```typescript
 import { sort } from 'js-immutable-utils/array'
 
@@ -82,7 +82,7 @@ let sortedPeople = sort(people)
 console.log(people) // ['Bob', 'Charlie', 'Alice']
 console.log(sortedPeople) // ['Alice', 'Bob', 'Charlie']
 ```
-### Set an element
+### Setting an element
 ```typescript
 import { set } from 'js-immutable-utils/array'
 
