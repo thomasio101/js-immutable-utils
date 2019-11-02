@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/thomasio101/js-immutable-utils/issues"
   },
-  "homepage": "https://github.com/thomasio101/js-immutable-utils#readme"
+  "homepage": "https://github.com/thomasio101/js-immutable-utils#readme",
+  "devDependencies": {
+    "typescript": "^3.6.4"
+  }
 }
