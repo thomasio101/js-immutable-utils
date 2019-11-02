@@ -16,7 +16,7 @@ for (let i = 0; i < lines.length; i++) {
         const potentialCodeBlockLines = lines.slice(i + 3, -1)
         const exampleCode = potentialCodeBlockLines.slice(0, potentialCodeBlockLines.indexOf('```\r')).join('').replace('js-immutable-utils', './src/index').replace(/console\.log\(.*\)/g, '')
 
-        testCode += `\ntest('${exampleName.replace('\'', '\\\'')}', function () {
+        testCode += `\ntest('${exampleName.replace('\'', '\\\'')}', () => {
             ${exampleCode}
             ${assertionCode}
         })`
