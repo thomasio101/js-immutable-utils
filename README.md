@@ -93,3 +93,26 @@ let newPeople = set(people, 1, 'Ayden')
 console.log(people) // ['Alice', 'Bob', 'Charlie']
 console.log(newPeople) // ['Ayden', 'Bob', 'Charlie']
 ```
+## Objects
+### Setting a property
+```typescript
+import { set } from 'js-immutable-utils/object'
+
+let point = { x: 0, y: 0, z: 0 }
+
+let newPoint = set(point, 'x', 1)
+
+console.log(point) // {x: 0, y: 0, z: 0}
+console.log(newPoint) // {x: 1, y: 0, z: 0}
+```
+### Removing a property
+```typescript
+import { remove } from 'js-immutable-utils/object'
+
+let point = { x: 0, y: 0, z: 0 }
+
+let newPoint = remove(point, 'z')
+
+console.log(point) // {x: 0, y: 0, z: 0}
+console.log(newPoint) // {x: 0, y: 0}
+```
