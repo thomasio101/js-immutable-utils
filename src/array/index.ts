@@ -56,11 +56,11 @@ export function sort<T>(
     elementB
   ) => {
     if (elementA > elementB) {
-        return 1
+      return 1;
     } else if (elementA === elementB) {
-        return 0
+      return 0;
     } else {
-        return -1
+      return -1;
     }
   }
 ): T[] {
