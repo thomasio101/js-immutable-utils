@@ -1,4 +1,6 @@
 # js-immutable-utils
+![](https://github.com/thomasio101/js-immutable-utils/workflows/Node%20CI/badge.svg)
+
 This package provides simple utility functions for modifying immutables in Javascript.
 # Examples
 ## Arrays
