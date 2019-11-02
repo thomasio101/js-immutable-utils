@@ -21,7 +21,7 @@ test('# Inserting elements into an array', function () {
         })
 test('# Sorting an array', function () {
             let people = ['Bob', 'Charlie', 'Alice']let sortedPeople = arrayUtils.sort(people)console.log(people) // ['Bob', 'Charlie', 'Alice']console.log(sortedPeople) // ['Alice', 'Bob', 'Charlie']
-            expect(people).toStrictEqual(["Alice","Charlie","Bob"]),expect(newPeople).toStrictEqual(["Alice","Bob","Charlie"])
+            expect(people).toStrictEqual(["Alice","Charlie","Bob"]),expect(sortedPeople).toStrictEqual(["Alice","Bob","Charlie"])
         })
 test('# Setting an element', function () {
             let people = ['Alice', 'Bob', 'Charlie']let newPeople = arrayUtils.set(people, 1, 'Ayden')console.log(people) // ['Alice', 'Bob', 'Charlie']console.log(newPeople) // ['Ayden', 'Bob', 'Charlie']
@@ -32,6 +32,6 @@ test('# Setting a property', function () {
             expect(point).toStrictEqual({"x":0,"y":0,"z":0}),expect(newPoint).toStrictEqual({"x":1,"y":0,"z":0})
         })
 test('# Removing a property', function () {
-            let point = { x: 0, y: 0, z: 0 }let newPoint = remove(point, 'z')console.log(point) // {x: 0, y: 0, z: 0}
+            let point = { x: 0, y: 0, z: 0 }let newPoint = objectUtils.remove(point, 'z')console.log(point) // {x: 0, y: 0, z: 0}
             expect(point).toStrictEqual({"x":0,"y":0,"z":0}),expect(newPoint).toStrictEqual({"x":0,"y":0})
         })
