@@ -4,6 +4,7 @@
   "description": "This package provides simple utility functions for modifying immutables in Javascript.",
   "main": "index.js",
   "scripts": {
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
