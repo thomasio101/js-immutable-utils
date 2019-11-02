@@ -113,7 +113,7 @@ import { object as objectUtils } from 'js-immutable-utils'
 
 let point = { x: 0, y: 0, z: 0 }
 
-let newPoint = remove(point, 'z')
+let newPoint = objectUtils.remove(point, 'z')
 
 console.log(point) // {x: 0, y: 0, z: 0}
 console.log(newPoint) // {x: 0, y: 0}
