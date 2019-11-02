@@ -82,7 +82,7 @@ let sortedPeople = sort(people)
 console.log(people) // ['Bob', 'Charlie', 'Alice']
 console.log(sortedPeople) // ['Alice', 'Bob', 'Charlie']
 ```
-### Set element
+### Set an element
 ```typescript
 import { set } from 'js-immutable-utils/array'
 
