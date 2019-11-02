@@ -79,7 +79,7 @@ console.log(people) // ['Alice', 'Bob', 'Charlie']
 console.log(newPeople) // ['Alice', 'Sarah', 'Tom', 'Bob', 'Charlie']
 ```
 ### Sorting an array
-[example]: # ({ "people": ["Alice", "Charlie", "Bob"], "sortedPeople": ["Alice", "Bob", "Charlie"] })
+[example]: # ({ "people": ["Bob", "Charlie", "Alice"], "sortedPeople": ["Alice", "Bob", "Charlie"] })
 ```typescript
 import { array as arrayUtils } from 'js-immutable-utils'
 
