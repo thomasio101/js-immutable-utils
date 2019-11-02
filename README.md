@@ -97,7 +97,7 @@ import { array as arrayUtils } from 'js-immutable-utils'
 
 let people = ['Alice', 'Bob', 'Charlie']
 
-let newPeople = arrayUtils.set(people, 1, 'Ayden')
+let newPeople = arrayUtils.set(people, 0, 'Ayden')
 
 console.log(people) // ['Alice', 'Bob', 'Charlie']
 console.log(newPeople) // ['Ayden', 'Bob', 'Charlie']

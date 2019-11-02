@@ -24,7 +24,7 @@ test('# Sorting an array', function () {
             expect(people).toStrictEqual(["Bob","Charlie","Alice"]),expect(sortedPeople).toStrictEqual(["Alice","Bob","Charlie"])
         })
 test('# Setting an element', function () {
-            let people = ['Alice', 'Bob', 'Charlie']let newPeople = arrayUtils.set(people, 1, 'Ayden')console.log(people) // ['Alice', 'Bob', 'Charlie']console.log(newPeople) // ['Ayden', 'Bob', 'Charlie']
+            let people = ['Alice', 'Bob', 'Charlie']let newPeople = arrayUtils.set(people, 0, 'Ayden')console.log(people) // ['Alice', 'Bob', 'Charlie']console.log(newPeople) // ['Ayden', 'Bob', 'Charlie']
             expect(people).toStrictEqual(["Alice","Bob","Charlie"]),expect(newPeople).toStrictEqual(["Ayden","Bob","Charlie"])
         })
 test('# Setting a property', function () {
