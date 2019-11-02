@@ -21,11 +21,11 @@ test('# Inserting elements into an array', function () {
         })
 test('# Sorting an array', function () {
             let people = ['Bob', 'Charlie', 'Alice']let sortedPeople = arrayUtils.sort(people)console.log(people) // ['Bob', 'Charlie', 'Alice']console.log(sortedPeople) // ['Alice', 'Bob', 'Charlie']
-            expect(people).toStrictEqual(["Alice","Charlie","Bob"]),expect(sortedPeople).toStrictEqual(["Alice","Bob","Charlie"])
+            expect(people).toStrictEqual(["Bob","Charlie","Alice"]),expect(sortedPeople).toStrictEqual(["Alice","Bob","Charlie"])
         })
 test('# Setting an element', function () {
             let people = ['Alice', 'Bob', 'Charlie']let newPeople = arrayUtils.set(people, 1, 'Ayden')console.log(people) // ['Alice', 'Bob', 'Charlie']console.log(newPeople) // ['Ayden', 'Bob', 'Charlie']
-            expect(people).toStrictEqual(["Alice","Charlie","Bob"]),expect(newPeople).toStrictEqual(["Ayden","Bob","Charlie"])
+            expect(people).toStrictEqual(["Alice","Bob","Charlie"]),expect(newPeople).toStrictEqual(["Ayden","Bob","Charlie"])
         })
 test('# Setting a property', function () {
             let point = { x: 0, y: 0, z: 0 }let newPoint = objectUtils.set(point, 'x', 1)console.log(point) // {x: 0, y: 0, z: 0}console.log(newPoint) // {x: 1, y: 0, z: 0}
