@@ -16,15 +16,27 @@ for (let i = 0; i < lines.length; i++) {
 
     const normalAssertionCode = Object.keys(exampleOutput.normal || {}).map(
       key =>
-        `expect(${key}).toEqual(${ (exampleOutput.constructors || {})[key] !== undefined ? `new ${ exampleOutput.constructors[key] }(` : '' }${JSON.stringify(exampleOutput.normal[key])}${ (exampleOutput.constructors || {})[key] !== undefined ? `)` : '' })\r`
+        `expect(${key}).toEqual(${
+          (exampleOutput.constructors || {})[key] !== undefined
+            ? `new ${exampleOutput.constructors[key]}(`
+            : ''
+        }${JSON.stringify(exampleOutput.normal[key])}${
+          (exampleOutput.constructors || {})[key] !== undefined ? `)` : ''
+        })\r`
     );
 
     const strictAssertionCode = Object.keys(exampleOutput.strict || {}).map(
       key =>
-        `expect(${key}).toStrictEqual(${ (exampleOutput.constructors || {})[key] !== undefined ? `new ${ exampleOutput.constructors[key] }(` : '' }${JSON.stringify(exampleOutput.strict[key])}${ (exampleOutput.constructors || {})[key] !== undefined ? `)` : '' })\r`
+        `expect(${key}).toStrictEqual(${
+          (exampleOutput.constructors || {})[key] !== undefined
+            ? `new ${exampleOutput.constructors[key]}(`
+            : ''
+        }${JSON.stringify(exampleOutput.strict[key])}${
+          (exampleOutput.constructors || {})[key] !== undefined ? `)` : ''
+        })\r`
     );
-    
-    const assertionCode = normalAssertionCode + strictAssertionCode
+
+    const assertionCode = normalAssertionCode + strictAssertionCode;
 
     const potentialCodeBlockLines = lines.slice(i + 3, -1);
     const exampleCode = potentialCodeBlockLines
