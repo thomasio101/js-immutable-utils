@@ -14,12 +14,12 @@ for (let i = 0; i < lines.length; i++) {
       lines[i].slice(lines[i].indexOf('(') + 1, -2)
     );
 
-    const normalAssertionCode = Object.keys(exampleOutput.normal | {}).map(
+    const normalAssertionCode = Object.keys(exampleOutput.normal || {}).map(
       key =>
         `expect(${key}).toEqual(${JSON.stringify(exampleOutput.normal[key])})\r`
     );
 
-    const strictAssertionCode = Object.keys(exampleOutput.strict | {}).map(
+    const strictAssertionCode = Object.keys(exampleOutput.strict || {}).map(
       key =>
         `expect(${key}).toStrictEqual(${JSON.stringify(exampleOutput.strict[key])})\r`
     );
