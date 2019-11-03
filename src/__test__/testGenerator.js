@@ -5,7 +5,7 @@ const lines = readFileSync(`${__dirname}/../../README.md`, 'utf-8')
   .filter(Boolean);
 
 let testCode =
-  "import { array as arrayUtils, object as objectUtils } from '../index';";
+  "import { array as arrayUtils, object as objectUtils, set as setUtils } from '../index';";
 
 for (let i = 0; i < lines.length; i++) {
   if (lines[i].startsWith('[example]')) {
@@ -14,10 +14,17 @@ for (let i = 0; i < lines.length; i++) {
       lines[i].slice(lines[i].indexOf('(') + 1, -2)
     );
 
-    const assertionCode = Object.keys(exampleOutput).map(
+    const normalAssertionCode = Object.keys(exampleOutput.normal || {}).map(
       key =>
-        `expect(${key}).toStrictEqual(${JSON.stringify(exampleOutput[key])})`
+        `expect(${key}).toEqual(${ (exampleOutput.constructors || {})[key] !== undefined ? `new ${ exampleOutput.constructors[key] }(` : '' }${JSON.stringify(exampleOutput.normal[key])}${ (exampleOutput.constructors || {})[key] !== undefined ? `)` : '' })\r`
     );
+
+    const strictAssertionCode = Object.keys(exampleOutput.strict || {}).map(
+      key =>
+        `expect(${key}).toStrictEqual(${ (exampleOutput.constructors || {})[key] !== undefined ? `new ${ exampleOutput.constructors[key] }(` : '' }${JSON.stringify(exampleOutput.strict[key])}${ (exampleOutput.constructors || {})[key] !== undefined ? `)` : '' })\r`
+    );
+    
+    const assertionCode = normalAssertionCode + strictAssertionCode
 
     const potentialCodeBlockLines = lines.slice(i + 3, -1);
     const exampleCode = potentialCodeBlockLines
