@@ -16,12 +16,12 @@ for (let i = 0; i < lines.length; i++) {
 
     const normalAssertionCode = Object.keys(exampleOutput.normal || {}).map(
       key =>
-        `expect(${key}).toEqual(${JSON.stringify(exampleOutput.normal[key])})\r`
+        `expect(${key}).toEqual(${ (exampleOutput.constructors || {})[key] !== undefined ? `new ${ exampleOutput.constructors[key] }(` : '' }${JSON.stringify(exampleOutput.normal[key])}${ (exampleOutput.constructors || {})[key] !== undefined ? `)` : '' })\r`
     );
 
     const strictAssertionCode = Object.keys(exampleOutput.strict || {}).map(
       key =>
-        `expect(${key}).toStrictEqual(${JSON.stringify(exampleOutput.strict[key])})\r`
+        `expect(${key}).toStrictEqual(${ (exampleOutput.constructors || {})[key] !== undefined ? `new ${ exampleOutput.constructors[key] }(` : '' }${JSON.stringify(exampleOutput.strict[key])}${ (exampleOutput.constructors || {})[key] !== undefined ? `)` : '' })\r`
     );
     
     const assertionCode = normalAssertionCode + strictAssertionCode
