@@ -14,10 +14,17 @@ for (let i = 0; i < lines.length; i++) {
       lines[i].slice(lines[i].indexOf('(') + 1, -2)
     );
 
-    const assertionCode = Object.keys(exampleOutput).map(
+    const normalAssertionCode = Object.keys(exampleOutput.normal | {}).map(
       key =>
-        `expect(${key}).toStrictEqual(${JSON.stringify(exampleOutput[key])})`
+        `expect(${key}).toEqual(${JSON.stringify(exampleOutput.normal[key])})\r`
     );
+
+    const strictAssertionCode = Object.keys(exampleOutput.strict | {}).map(
+      key =>
+        `expect(${key}).toStrictEqual(${JSON.stringify(exampleOutput.strict[key])})\r`
+    );
+    
+    const assertionCode = normalAssertionCode + strictAssertionCode
 
     const potentialCodeBlockLines = lines.slice(i + 3, -1);
     const exampleCode = potentialCodeBlockLines
