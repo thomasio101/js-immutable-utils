@@ -5,7 +5,7 @@ const lines = readFileSync(`${__dirname}/../../README.md`, 'utf-8')
   .filter(Boolean);
 
 let testCode =
-  "import { array as arrayUtils, object as objectUtils } from '../index';";
+  "import { array as arrayUtils, object as objectUtils, set as setUtils } from '../index';";
 
 for (let i = 0; i < lines.length; i++) {
   if (lines[i].startsWith('[example]')) {
