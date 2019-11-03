@@ -130,3 +130,27 @@ const newPoint = objectUtils.remove(point, 'z')
 console.log(point) // {x: 0, y: 0, z: 0}
 console.log(newPoint) // {x: 0, y: 0}
 ```
+## Sets
+### Adding a value to a set
+[example]: # ({ "normal": { "names": ["Alice", "Bob", "Charlie"], "newNames": ["Alice", "Bob", "Charlie", "Dyllan"] }, "constructors": { "names": "Set", "newNames": "Set" } })
+```typescript
+import { set as setUtils } from 'js-immutable-utils'
+
+const names = new Set(['Alice', 'Bob', 'Charlie'])
+const newNames = setUtils.add(names, 'Dyllan')
+
+console.log(names) // Set { 'Alice', 'Bob', 'Charlie' }
+console.log(newNames) // Set { 'Alice', 'Bob', 'Charlie', 'Dyllan' }
+```
+### Removing a value from a set
+[example]: # ({ "normal": { "names": ["Alice", "Bob", "Charlie"], "newNames": ["Alice", "Charlie"] }, "strict": { "removed": true }, "constructors": { "names": "Set", "newNames": "Set" } })
+```typescript
+import { set as setUtils } from 'js-immutable-utils'
+
+const names = new Set(['Alice', 'Bob', 'Charlie'])
+const { removed, set: newNames } = setUtils.remove(names, 'Bob')
+
+console.log(names) // Set { 'Alice', 'Bob', 'Charlie' }
+console.log(removed) // true
+console.log(newNames) // Set { 'Alice', 'Charlie' }
+```

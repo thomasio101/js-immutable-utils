@@ -1,4 +1,4 @@
-import { array as arrayUtils, object as objectUtils } from '../index';
+import { array as arrayUtils, object as objectUtils, set as setUtils } from '../index';
 test('# Appending elements onto an array', () => {
             const people = ['Alice', 'Bob', 'Charlie']const newPeople = arrayUtils.push(people, 'Dyllan', 'Eddie') // ['Alice', 'Bob', 'Charlie'] // ['Alice', 'Bob', 'Charlie', 'Dyllan', 'Eddie']
             
@@ -36,6 +36,10 @@ test('# Removing a property', () => {
             expect(point).toStrictEqual({"x":0,"y":0,"z":0}),expect(newPoint).toStrictEqual({"x":0,"y":0})
         })
 test('# Adding a value to a set', () => {
-            const names = new Set(['Alice', 'Bob', 'Charlie'])
-            expect(names).toEqual(["Alice","Bob","Charlie"])
+            const names = new Set(['Alice', 'Bob', 'Charlie'])const newNames = setUtils.add(names, 'Dyllan') // Set { 'Alice', 'Bob', 'Charlie' } // Set { 'Alice', 'Bob', 'Charlie', 'Dyllan' }
+            expect(names).toEqual(new Set(["Alice","Bob","Charlie"])),expect(newNames).toEqual(new Set(["Alice","Bob","Charlie","Dyllan"]))
+        })
+test('# Removing a value from a set', () => {
+            const names = new Set(['Alice', 'Bob', 'Charlie'])const { removed, set: newNames } = setUtils.remove(names, 'Bob') // Set { 'Alice', 'Bob', 'Charlie' } // true
+            expect(names).toEqual(new Set(["Alice","Bob","Charlie"])),expect(newNames).toEqual(new Set(["Alice","Charlie"]))expect(removed).toStrictEqual(true)
         })
