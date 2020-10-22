@@ -29,23 +29,15 @@ export function splice<T>(
   ...elements: T[]
 ): { array: T[]; removed: T[] } {
   const actualStartIndex =
-    startIndex >= 0 ? startIndex : array.length - 1 + startIndex;
+    startIndex >= 0 ? startIndex : array.length + startIndex;
 
   return {
     array: [
-      ...array.filter(
-        (element, elementIndex) => elementIndex <= actualStartIndex
-      ),
+      ...array.slice(0, actualStartIndex),
       ...elements,
-      ...array.filter(
-        (element, elementIndex) => elementIndex > actualStartIndex + amount
-      )
+      ...array.slice(actualStartIndex + amount)
     ],
-    removed: array.filter(
-      (element, elementIndex) =>
-        elementIndex > actualStartIndex &&
-        elementIndex <= actualStartIndex + amount
-    )
+    removed: array.slice(actualStartIndex, actualStartIndex + amount)
   };
 }
 

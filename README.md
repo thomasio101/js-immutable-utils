@@ -63,7 +63,7 @@ import { array as arrayUtils } from 'js-immutable-utils'
 
 const people = ['Alice', 'Bob', 'Charlie']
 
-const { array: newPeople, removed: removedPeople } = arrayUtils.splice(people, 0)
+const { array: newPeople, removed: removedPeople } = arrayUtils.splice(people, 1)
 
 console.log(people) // ['Alice', 'Bob', 'Charlie']
 console.log(removedPeople) // ['Bob']
@@ -76,7 +76,7 @@ import { array as arrayUtils } from 'js-immutable-utils'
 
 const people = ['Alice', 'Bob', 'Charlie']
 
-const { array: newPeople } = arrayUtils.splice(people, 0, 0, 'Sarah', 'Tom')
+const { array: newPeople } = arrayUtils.splice(people, 1, 0, 'Sarah', 'Tom')
 
 console.log(people) // ['Alice', 'Bob', 'Charlie']
 console.log(newPeople) // ['Alice', 'Sarah', 'Tom', 'Bob', 'Charlie']
