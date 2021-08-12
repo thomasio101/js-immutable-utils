@@ -2,7 +2,9 @@ export function push<T>(array: readonly T[], ...elements: readonly T[]): T[] {
   return [...array, ...elements];
 }
 
-export function pop<T>(array: readonly T[]): { array: T[]; element: T | undefined } {
+export function pop<T>(
+  array: readonly T[]
+): { array: T[]; element: T | undefined } {
   const lastIndex = array.length - 1;
 
   return {
@@ -11,14 +13,19 @@ export function pop<T>(array: readonly T[]): { array: T[]; element: T | undefine
   };
 }
 
-export function shift<T>(array: readonly T[]): { array: readonly T[]; element: T | undefined } {
+export function shift<T>(
+  array: readonly T[]
+): { array: readonly T[]; element: T | undefined } {
   return {
     array: array.filter((element, index) => index > 0),
     element: array.length > 0 ? array[0] : undefined
   };
 }
 
-export function unshift<T>(array: readonly T[], ...elements: readonly T[]): T[] {
+export function unshift<T>(
+  array: readonly T[],
+  ...elements: readonly T[]
+): T[] {
   return [...elements, ...array];
 }
 

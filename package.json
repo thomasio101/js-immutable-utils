@@ -1,6 +1,6 @@
 {
   "name": "js-immutable-utils",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "This package provides simple utility functions for modifying immutables in Javascript.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
