@@ -1,8 +1,8 @@
-export function push<T>(array: T[], ...elements: T[]): T[] {
+export function push<T>(array: readonly T[], ...elements: readonly T[]): T[] {
   return [...array, ...elements];
 }
 
-export function pop<T>(array: T[]): { array: T[]; element: T | undefined } {
+export function pop<T>(array: readonly T[]): { array: T[]; element: T | undefined } {
   const lastIndex = array.length - 1;
 
   return {
@@ -11,22 +11,22 @@ export function pop<T>(array: T[]): { array: T[]; element: T | undefined } {
   };
 }
 
-export function shift<T>(array: T[]): { array: T[]; element: T | undefined } {
+export function shift<T>(array: readonly T[]): { array: readonly T[]; element: T | undefined } {
   return {
     array: array.filter((element, index) => index > 0),
     element: array.length > 0 ? array[0] : undefined
   };
 }
 
-export function unshift<T>(array: T[], ...elements: T[]): T[] {
+export function unshift<T>(array: readonly T[], ...elements: readonly T[]): T[] {
   return [...elements, ...array];
 }
 
 export function splice<T>(
-  array: T[],
+  array: readonly T[],
   startIndex: number,
   amount: number = 1,
-  ...elements: T[]
+  ...elements: readonly T[]
 ): { array: T[]; removed: T[] } {
   const actualStartIndex =
     startIndex >= 0 ? startIndex : array.length + startIndex;
@@ -42,7 +42,7 @@ export function splice<T>(
 }
 
 export function sort<T>(
-  array: T[],
+  array: readonly T[],
   comparator: (elementA: T, elementB: T) => 1 | 0 | -1 = (
     elementA,
     elementB
@@ -61,7 +61,7 @@ export function sort<T>(
   return arrayClone.sort(comparator);
 }
 
-export function reverse<T>(array: T[]): T[] {
+export function reverse<T>(array: readonly T[]): T[] {
   const reversedArray = [];
 
   for (let i = array.length - 1; i >= 0; i--) {
@@ -71,7 +71,7 @@ export function reverse<T>(array: T[]): T[] {
   return reversedArray;
 }
 
-export function set<T>(array: T[], index: number, value: T): T[] {
+export function set<T>(array: readonly T[], index: number, value: T): T[] {
   const actualIndex = index >= 0 ? index : array.length + index;
 
   return [
